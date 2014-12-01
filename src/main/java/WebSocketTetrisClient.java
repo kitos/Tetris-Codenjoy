@@ -66,7 +66,7 @@ public class WebSocketTetrisClient {
             }
 
             public void onMessage(String data) {
-                System.out.println("data = " + data);
+                //System.out.println("data = " + data);
                 Matcher matcher = urlPattern.matcher(data);
                 if ( !matcher.matches()) {
                     throw new RuntimeException("WTF? " + data);

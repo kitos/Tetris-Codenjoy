@@ -28,14 +28,14 @@ public class Command {
 
     public String build() {
         List<String> commands = new ArrayList<String>();
+        if (rotate > 0) {
+            commands.add("rotate=" + rotate);
+        }
         if (left > 0) {
             commands.add("left=" + left);
         }
         if (right > 0) {
             commands.add("right=" + right);
-        }
-        if (rotate > 0) {
-            commands.add("rotate=" + rotate);
         }
         commands.add("drop");
 
