@@ -14,6 +14,14 @@ public abstract class Figure {
                 return new I();
             case 'J':
                 return new J();
+            case 'L':
+                return new L();
+            case 'S':
+                return new S();
+            case 'Z':
+                return new Z();
+            case 'T':
+                return new T();
             default:
                 throw new IllegalArgumentException("Unknown figure code: " + figureCode);
         }

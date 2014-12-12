@@ -11,7 +11,7 @@ public class O extends Figure {
     private List<FigureState> states;
 
     protected O() {
-        states = new ArrayList<FigureState>(1);
+        states = new ArrayList<>(1);
         states.add(new FigureState(new Point[]{new Point(0, 0), new Point(1, 0), new Point(1, -1), new Point(0, -1)}, 0));
     }
 
