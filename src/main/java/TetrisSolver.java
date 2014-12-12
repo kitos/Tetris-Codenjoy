@@ -15,13 +15,14 @@ public class TetrisSolver {
     public String answer(String aFigure, int curX, int curY, String glassString, String next) {
         Glass glass = Glass.fromString(glassString);
         Figure figure = Figure.createFigure(aFigure.charAt(0));
-        List<Move> moves = new ArrayList<Move>();
+        List<Move> moves = new ArrayList<>();
 
         for (int y = 0; y < Glass.WIDTH; y++) {
             for (int x = 0; x < Glass.HEIGHT; x++) {
                 for (FigureState figureState : figure.getStates()) {
                     if (GlassHelper.canDrop(glass, x, y, figureState.getPoints())) {
-                        moves.add(new Move(x, y, figureState.getRotate()));
+                        int gapsUnderFigure = GlassHelper.gapsUnder(glass, x, y, figureState.getPoints());
+                        moves.add(new Move(x, y, figureState.getRotate(), figureState.getLowestPoint(), gapsUnderFigure));
                     }
                 }
             }

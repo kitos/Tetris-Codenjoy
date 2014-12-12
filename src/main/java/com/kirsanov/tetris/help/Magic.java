@@ -7,6 +7,7 @@ import java.util.Comparator;
 public class Magic implements Comparator<Move> {
     @Override
     public int compare(Move m1, Move m2) {
-        return Integer.compare(m1.getY(), m2.getY());
+        int gapsComparison = Integer.compare(m1.getGapsUnderFigure(), m2.getGapsUnderFigure());
+        return gapsComparison != 0 ? gapsComparison : Integer.compare(m1.getLowestPointY(), m2.getLowestPointY());
     }
 }

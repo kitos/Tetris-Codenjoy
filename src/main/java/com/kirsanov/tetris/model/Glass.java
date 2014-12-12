@@ -14,6 +14,18 @@ public class Glass {
         return instance;
     }
 
+    public boolean contains(Point point) {
+        return contains(point.getX(), point.getY());
+    }
+
+    public boolean contains(int x, int y) {
+        return x >= 0 && y >= 0 && x < Glass.WIDTH && y < Glass.HEIGHT;
+    }
+
+    public boolean isOccupied(Point point) {
+        return isOccupied(point.getX(), point.getY());
+    }
+
     public boolean isOccupied(int x, int y) {
         return encodedGlass.charAt(y * WIDTH + x) == OCCUPIED;
     }

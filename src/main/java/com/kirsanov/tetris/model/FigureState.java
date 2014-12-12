@@ -1,5 +1,7 @@
 package com.kirsanov.tetris.model;
 
+import java.util.Arrays;
+
 public class FigureState {
 
     private Point[] points;
@@ -11,6 +13,10 @@ public class FigureState {
     public FigureState(Point[] points, int rotate) {
         this.points = points;
         this.rotate = rotate;
+    }
+
+    public int getLowestPoint() {
+        return Arrays.asList(points).stream().map(point -> point.getY()).min(Integer::compare).get();
     }
 
     public Point[] getPoints() {
